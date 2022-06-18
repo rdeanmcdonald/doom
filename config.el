@@ -4,41 +4,30 @@
       ;; doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 22 :weight 'regular)
       ;; doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :size 22 :weight 'regular)
       doom-font (font-spec :family "Iosevka ss04" :size 20 :weight 'regular)
-      doom-theme 'doom-dracula
+      ;; doom-theme 'doom-dracula
       org-directory "~/org/"
       display-line-numbers-type t
       confirm-kill-emacs nil
       evil-escape-key-sequence "kj"
       evil-kill-on-visual-paste nil
-      ;; lsp-enable-symbol-highlighting t
-      ;; lsp-ui-doc-enable t
-      ;; lsp-ui-doc-show-with-cursor t
-      ;; lsp-ui-doc-show-with-mouse t
-      ;; lsp-lens-enable t
-      ;; lsp-headerline-breadcrumb-enable t
-      ;; lsp-ui-sideline-enable t
-      ;; lsp-ui-sideline-show-diagnostics t
-      ;; lsp-ui-sideline-show-code-actions t
-      ;; lsp-ui-sideline-enable t
-      ;; lsp-ui-sideline-show-hover t
-      ;; lsp-modeline-code-actions-enable t
-      ;; lsp-diagnostics-provider :flycheck
-      ;; lsp-ui-sideline-enable t
-      ;; lsp-eldoc-enable-hover t
-      ;; lsp-modeline-diagnostics-enable t
-      ;; lsp-signature-auto-activate t
-      ;; lsp-signature-render-documentation t
-      ;; lsp-completion-show-detail t
-      ;; lsp-completion-show-kind t
-      ;;lsp-prefer-flymake t
       projectile-project-search-path '("~/random/" "~/wise/"))
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; ========== SCROLLING IN TTY MODE ==========
+(unless window-system
+        (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+        (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
+;; ========== GET ICONS IN TTY MODE ==========
+
 ;; Don't create new workspace when creating new emacsclient
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
+
+;; Debugging
+(after! dap-mode
+  (setq dap-python-debugger 'debugpy))
 
 ;; Keybindings
 ;; (map! :leader
