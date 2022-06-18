@@ -21,6 +21,13 @@
         (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 ;; ========== GET ICONS IN TTY MODE ==========
 
+;; ========== TTY MODE WITH KITTY ==========
+;; get rid of the discontinuous vertical separators in Emacs
+(set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?│))
+;; clean up the end of the modeline
+(setq mode-line-end-spaces nil)
+;; ========== TTY MODE WITH KITTY ==========
+
 ;; Don't create new workspace when creating new emacsclient
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
