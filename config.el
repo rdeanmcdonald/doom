@@ -3,14 +3,14 @@
       user-mail-address "richard_mcdonald@alumni.brown.edu"
       ;; doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 22 :weight 'regular)
       ;; doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :size 22 :weight 'regular)
-      doom-font (font-spec :family "Iosevka ss04" :size 20 :weight 'regular)
-      ;; doom-theme 'doom-dracula
+      ;; doom-font (font-spec :family "Iosevka Nerd Font Mono" :size 20 :weight 'regular)
+      doom-theme 'doom-dracula
       org-directory "~/org/"
       display-line-numbers-type t
       confirm-kill-emacs nil
       evil-escape-key-sequence "kj"
       evil-kill-on-visual-paste nil
-      projectile-project-search-path '("~/random/" "~/wise/"))
+      projectile-project-search-path '("~/random/" "~/wise/" "~/.config"))
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
@@ -19,7 +19,7 @@
 (unless window-system
         (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
         (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
-;; ========== GET ICONS IN TTY MODE ==========
+;; ========== SCROLLING IN TTY MODE ==========
 
 ;; ========== TTY MODE WITH KITTY ==========
 ;; get rid of the discontinuous vertical separators in Emacs
