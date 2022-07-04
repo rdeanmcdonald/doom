@@ -49,7 +49,7 @@
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        ;;window-select     ; visually switch windows
-       ;;workspaces        ; tab emulation, persistence & separate workspaces
+       workspaces        ; tab emulation, persistence & separate workspaces
        ;;zen               ; distraction-free coding or writing
 
        :editor
@@ -126,7 +126,7 @@
        ;;(dart +flutter)   ; paint ui and not much else
        ;;dhall
        ;;elixir            ; erlang done right
-       ;;elm               ; care for a cup of TEA?
+       elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        ;;erlang            ; an elegant language for a more civilized age
        ;;ess               ; emacs speaks statistics
@@ -162,7 +162,7 @@
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
-       ;;rest              ; Emacs as a REST client
+       rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        (rust +lsp)             ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
@@ -173,7 +173,7 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       web               ; the tubes
+       (web +html +css +lsp)               ; the tubes
        yaml              ; JSON, but readable
        ;;zig               ; C, but simpler
 

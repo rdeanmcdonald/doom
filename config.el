@@ -3,7 +3,7 @@
       user-mail-address "richard_mcdonald@alumni.brown.edu"
       ;; doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 22 :weight 'regular)
       ;; doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :size 22 :weight 'regular)
-      ;; doom-font (font-spec :family "Iosevka Nerd Font Mono" :size 20 :weight 'regular)
+      doom-font (font-spec :family "Iosevka Nerd Font Mono" :size 20 :weight 'regular)
       doom-theme 'doom-dracula
       org-directory "~/org/"
       display-line-numbers-type t
@@ -34,6 +34,7 @@
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(alpha . 95))
 
 ;; ========== SCROLLING IN TTY MODE ==========
 (unless window-system
@@ -43,9 +44,9 @@
 
 ;; ========== TTY MODE WITH KITTY ==========
 ;; get rid of the discontinuous vertical separators in Emacs
-(set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?│))
+;; (set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?│))
 ;; clean up the end of the modeline
-(setq mode-line-end-spaces nil)
+;; (setq mode-line-end-spaces nil)
 ;; ========== TTY MODE WITH KITTY ==========
 
 ;; Don't create new workspace when creating new emacsclient
@@ -56,7 +57,16 @@
 (after! dap-mode
   (setq dap-python-debugger 'debugpy))
 
+;; (add-hook 'after-make-frame-functions
+;;         (lambda (frame)
+;;                 (doom/set-frame-opacity 95)))
+
+
 ;; Keybindings
+(map! :g "S-<down>" #'+workspace/switch-to)
+;; Org mode overrides global key bindings
+(with-eval-after-load "org"
+  (define-key org-mode-map (kbd "S-<down>") #'+workspace/switch-to))
 ;; (map! :leader
 ;;       (:prefix ("r" . "Replace")
 ;;        :desc "Replace all"
