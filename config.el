@@ -3,7 +3,9 @@
       user-mail-address "richard_mcdonald@alumni.brown.edu"
       ;; doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 22 :weight 'regular)
       ;; doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :size 22 :weight 'regular)
-      doom-font (font-spec :family "Iosevka Nerd Font Mono" :size 20 :weight 'regular)
+      ;; doom-font (font-spec :family "Iosevka Nerd Font Mono" :size 20 :weight 'regular)
+      doom-font (font-spec :family "FantasqueSansMono Nerd Font" :size 20 :weight 'regular)
+      ;; doom-font (font-spec :family "Comic Mono" :size 20 :weight 'regular)
       doom-theme 'doom-dracula
       org-directory "~/org/"
       display-line-numbers-type t
@@ -35,6 +37,13 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(alpha . 95))
+
+;; in org mode, auto crop lines to 80 char width
+(add-hook 'org-mode-hook #'(lambda () (setq fill-column 80)))
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+;; Always show 80 char column
+(global-display-fill-column-indicator-mode 1)
 
 ;; ========== SCROLLING IN TTY MODE ==========
 (unless window-system
