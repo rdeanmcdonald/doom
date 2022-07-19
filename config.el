@@ -42,6 +42,11 @@
 (add-hook 'org-mode-hook #'(lambda () (setq fill-column 80)))
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
+;; treat '_' and '-' as part of word for all modes
+(add-hook! 'after-change-major-mode-hook
+        (modify-syntax-entry ?_ "w")
+        (modify-syntax-entry ?- "w"))
+
 ;; Always show 80 char column
 (global-display-fill-column-indicator-mode 1)
 
