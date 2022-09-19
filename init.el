@@ -174,7 +174,7 @@
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        (web +html +css +lsp +tree-sitter)
-       (yaml +lsp +tree-sitter)
+       (yaml +lsp)
        ;;zig               ; C, but simpler
 
        :email
