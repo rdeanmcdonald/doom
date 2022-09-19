@@ -7,7 +7,7 @@
       ;; doom-font (font-spec :family "FantasqueSansMono Nerd Font" :size 20 :weight 'regular)
       ;; doom-font (font-spec :family "scientifica" :size 22 :weight 'regular)
       ;; doom-font (font-spec :family "Comic Mono" :size 20 :weight 'regular)
-      doom-theme 'doom-dracula
+      doom-theme 'doom-one
       org-directory "~/org/"
       display-line-numbers-type t
       confirm-kill-emacs nil
