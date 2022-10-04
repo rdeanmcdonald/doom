@@ -80,10 +80,12 @@
 (setq +format-on-save-enabled-modes
       '(not gfm-mode))
 
-
-
 ;; Keybindings
 (map! :g "S-<down>" #'+workspace/switch-to)
 ;; Org mode overrides global key bindings
 (with-eval-after-load "org"
   (define-key org-mode-map (kbd "S-<down>") #'+workspace/switch-to))
+
+;; Jsonnet
+(use-package! jsonnet-mode
+  :defer t)
