@@ -67,7 +67,7 @@
        word-wrap
 
        :emacs
-       (dired +icons)
+       (dired +icons +ranger)
        electric
        ;;ibuffer         ; interactive buffer management
        (undo +tree)
